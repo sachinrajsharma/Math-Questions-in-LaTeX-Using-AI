@@ -1,0 +1,478 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\begin{document}
+	
+	\section*{Case Study 1: Understanding Integration as the Inverse Process of Differentiation}
+	
+	Integration is the reverse process of differentiation. If you know the derivative of a function, integration helps you retrieve the original function (up to a constant). This concept is central to the idea of antiderivatives. In many physical systems, if we know the rate of change (like velocity), we use integration to find the actual quantity (like displacement). Consider a student preparing for the board exams and revising the topic of indefinite integrals. He remembers that the differentiation of $x^n$ gives $nx^{n-1}$ and thus thinks that integrating $x^{n-1}$ should give $x^n$. He uses standard results like:
+	\[
+	\int x^n \, dx = \frac{x^{n+1}}{n+1} + C, \quad \text{for } n \neq -1
+	\]
+	\[
+	\int e^x \, dx = e^x + C, \quad \int \sin x \, dx = -\cos x + C
+	\]
+	He also recalls that the derivative of $\ln |x|$ is $\frac{1}{x}$, so:
+	\[
+	\int \frac{1}{x} \, dx = \ln |x| + C
+	\]
+	Using such relationships, he solves multiple questions. Let's help him validate his understanding.
+	
+	\subsection*{MCQ Questions}
+	
+	\begin{enumerate}
+		\item The integral $\displaystyle \int 5x^4 \, dx$ is:
+		\begin{enumerate}[label=(\Alph*)]
+			\item $x^5 + C$
+			\item $\frac{5x^5}{5} + C$
+			\item $x^4 + C$
+			\item $5x^5 + C$
+		\end{enumerate}
+		\textbf{Answer: (B)}\\
+		\textbf{Solution: } Use the formula $\int x^n \, dx = \frac{x^{n+1}}{n+1} + C$:
+		\[
+		\int 5x^4 \, dx = 5 \cdot \frac{x^{5}}{5} + C = x^5 + C \Rightarrow \boxed{\text{(B)}}
+		\]
+		
+		\item Evaluate: $\displaystyle \int \left(3x^2 + 2x + 1\right) dx$
+		\begin{enumerate}[label=(\Alph*)]
+			\item $x^3 + x^2 + x + C$
+			\item $x^3 + x + 1 + C$
+			\item $x^3 + 2x + 1 + C$
+			\item $3x^3 + 2x^2 + x + C$
+		\end{enumerate}
+		\textbf{Answer: (A)}\\
+		\textbf{Solution: }
+		\[
+		\int (3x^2 + 2x + 1) dx = \int 3x^2 \, dx + \int 2x \, dx + \int 1 \, dx = x^3 + x^2 + x + C
+		\Rightarrow \boxed{\text{(A)}}
+		\]
+		
+		\item Which of the following functions is the antiderivative of $\cos x$?
+		\begin{enumerate}[label=(\Alph*)]
+			\item $\sin x + C$
+			\item $-\sin x + C$
+			\item $\cos x + C$
+			\item $\tan x + C$
+		\end{enumerate}
+		\textbf{Answer: (A)}\\
+		\textbf{Solution: } Since $\frac{d}{dx}[\sin x] = \cos x$, we get:
+		\[
+		\int \cos x \, dx = \sin x + C \Rightarrow \boxed{\text{(A)}}
+		\]
+		
+		\item The function $F(x) = \ln |x| + C$ is an antiderivative of:
+		\begin{enumerate}[label=(\Alph*)]
+			\item $x$
+			\item $\frac{1}{x^2}$
+			\item $\frac{1}{x}$
+			\item $e^x$
+		\end{enumerate}
+		\textbf{Answer: (C)}\\
+		\textbf{Solution: }
+		\[
+		\frac{d}{dx}[\ln |x| + C] = \frac{1}{x} \Rightarrow \int \frac{1}{x} dx = \ln |x| + C \Rightarrow \boxed{\text{(C)}}
+		\]
+		
+		\item If $\int f(x) \, dx = F(x) + C$, then $\frac{d}{dx}[F(x)]$ is:
+		\begin{enumerate}[label=(\Alph*)]
+			\item $f'(x)$
+			\item $F'(x) + C$
+			\item $f(x)$
+			\item $F(x)$
+		\end{enumerate}
+		\textbf{Answer: (C)}\\
+		\textbf{Solution: } By definition of antiderivative,
+		\[
+		\frac{d}{dx} \left[\int f(x) dx \right] = f(x) \Rightarrow \frac{d}{dx}[F(x) + C] = f(x) \Rightarrow \boxed{\text{(C)}}
+		\]
+		
+	\end{enumerate}
+	
+	
+	
+	
+	\pagebreak
+	
+	
+		
+		\section*{Case Study 2: Applying Standard Integral Formulae in Real Problems}
+		
+		Standard integrals provide direct formulas to evaluate common functions. These include powers of $x$, exponential functions, and trigonometric functions. Students must memorize and apply them correctly in various problems. The following formulas are essential:
+		\[
+		\int x^n dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1), \quad 
+		\int \frac{1}{x} dx = \ln|x| + C, \quad 
+		\int e^x dx = e^x + C
+		\]
+		\[
+		\int a^x dx = \frac{a^x}{\ln a} + C, \quad
+		\int \sin x dx = -\cos x + C, \quad
+		\int \cos x dx = \sin x + C
+		\]
+		A board exam question asked to evaluate $\int (x^2 + e^x - \cos x)\,dx$, which puzzled students. Let us explore similar problems to enhance understanding.
+		
+		\subsection*{MCQ Questions}
+		
+		\begin{enumerate}
+			\item Evaluate: $\displaystyle \int (e^x + \cos x)\,dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $e^x - \cos x + C$
+				\item $e^x + \sin x + C$
+				\item $e^x - \sin x + C$
+				\item $e^x + \cos x + C$
+			\end{enumerate}
+			\textbf{Answer: (B)}\\
+			\textbf{Solution: } Break the integral:
+			\[
+			\int (e^x + \cos x) dx = \int e^x dx + \int \cos x dx = e^x + \sin x + C
+			\Rightarrow \boxed{\text{(B)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int 2x^3\,dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{x^4}{2} + C$
+				\item $2x^4 + C$
+				\item $\frac{2x^4}{4} + C$
+				\item $x^4 + C$
+			\end{enumerate}
+			\textbf{Answer: (C)}\\
+			\textbf{Solution: }
+			\[
+			\int 2x^3 dx = 2 \cdot \frac{x^4}{4} = \frac{2x^4}{4} + C \Rightarrow \boxed{\text{(C)}}
+			\]
+			
+			\item Find $\displaystyle \int a^x dx$ where $a > 0$, $a \neq 1$:
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{a^x}{a} + C$
+				\item $\ln a^x + C$
+				\item $\frac{a^x}{\ln a} + C$
+				\item $a^x + C$
+			\end{enumerate}
+			\textbf{Answer: (C)}\\
+			\textbf{Solution: }
+			\[
+			\int a^x dx = \frac{a^x}{\ln a} + C \Rightarrow \boxed{\text{(C)}}
+			\]
+			
+			\item The integral $\displaystyle \int \frac{1}{x}\,dx$ is:
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\ln |x| + C$
+				\item $\frac{1}{x^2} + C$
+				\item $x^{-1} + C$
+				\item $-\ln |x| + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: }
+			\[
+			\int \frac{1}{x} dx = \ln |x| + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int (\sin x - \cos x) dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\cos x - \sin x + C$
+				\item $-\cos x - \sin x + C$
+				\item $-\cos x + \sin x + C$
+				\item $\cos x + \sin x + C$
+			\end{enumerate}
+			\textbf{Answer: (C)}\\
+			\textbf{Solution: }
+			\[
+			\int (\sin x - \cos x) dx = \int \sin x dx - \int \cos x dx = -\cos x - \sin x + C
+			\Rightarrow \boxed{\text{(C)}}
+			\]
+			
+		\end{enumerate}
+	
+	
+	
+	\pagebreak
+	
+	
+		
+		\section*{Case Study 3: Integration Using Substitution Method}
+		
+		The substitution method simplifies integrals by changing variables. If a function can be expressed in terms of a simpler function and its derivative, substitution becomes an effective tool. For example, integrals of the form $\int f(g(x))g'(x)\,dx$ can be evaluated using the substitution $t = g(x)$. A frequently used case is:
+		\[
+		\int \frac{2x}{x^2+1} \, dx \quad \text{Let } t = x^2 + 1 \Rightarrow dt = 2x\,dx
+		\Rightarrow \int \frac{1}{t}\,dt = \ln|t| + C = \ln(x^2+1) + C
+		\]
+		Substitution is also effective in integrals involving trigonometric identities or rational expressions. Below are problems where substitution is applied effectively.
+		
+		\subsection*{MCQ Questions}
+		
+		\begin{enumerate}
+			\item Evaluate: $\displaystyle \int \frac{2x}{x^2 + 4} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\ln(x^2 + 4) + C$
+				\item $\frac{1}{x^2 + 4} + C$
+				\item $\frac{2x}{x^2 + 4} + C$
+				\item $\frac{1}{2} \ln(x^2 + 4) + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Let $t = x^2 + 4 \Rightarrow dt = 2x\,dx$. So,
+			\[
+			\int \frac{2x}{x^2 + 4} dx = \int \frac{1}{t} dt = \ln |t| + C = \ln(x^2 + 4) + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Solve: $\displaystyle \int x \sqrt{x^2 + 1} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{1}{3}(x^2+1)^{3/2} + C$
+				\item $\frac{1}{2}(x^2+1)^{3/2} + C$
+				\item $\frac{1}{2}(x^2+1)^{1/2} + C$
+				\item $\frac{2}{3}(x^2+1)^{3/2} + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Let $t = x^2 + 1 \Rightarrow dt = 2x dx \Rightarrow x dx = \frac{1}{2} dt$
+			\[
+			\int x \sqrt{x^2 + 1} dx = \frac{1}{2} \int \sqrt{t} dt = \frac{1}{2} \cdot \frac{2}{3} t^{3/2} + C = \frac{1}{3}(x^2 + 1)^{3/2} + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int \frac{x}{\sqrt{x^2 + 9}} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\sqrt{x^2 + 9} + C$
+				\item $\frac{1}{2}\sqrt{x^2 + 9} + C$
+				\item $\ln(x^2 + 9) + C$
+				\item $\ln|x + \sqrt{x^2 + 9}| + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Let $t = x^2 + 9 \Rightarrow dt = 2x dx$
+			\[
+			\int \frac{x}{\sqrt{x^2 + 9}} dx = \frac{1}{2} \int \frac{1}{\sqrt{t}} dt = \frac{1}{2} \cdot 2 \sqrt{t} + C = \sqrt{x^2 + 9} + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Find: $\displaystyle \int \frac{1}{x\ln x} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{1}{\ln x} + C$
+				\item $\ln(\ln x) + C$
+				\item $\frac{1}{x\ln x} + C$
+				\item $x \ln x + C$
+			\end{enumerate}
+			\textbf{Answer: (B)}\\
+			\textbf{Solution: } Let $t = \ln x \Rightarrow dt = \frac{1}{x} dx \Rightarrow dx = x dt$
+			\[
+			\int \frac{1}{x \ln x} dx = \int \frac{1}{t} dt = \ln|t| + C = \ln(\ln x) + C \Rightarrow \boxed{\text{(B)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int \frac{\tan^{-1} x}{1+x^2} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{1}{2} \ln(1 + x^2) + C$
+				\item $\frac{1}{2}(\tan^{-1} x)^2 + C$
+				\item $\tan^{-1} x + C$
+				\item $(\tan^{-1} x)^2 + C$
+			\end{enumerate}
+			\textbf{Answer: (D)}\\
+			\textbf{Solution: } Let $t = \tan^{-1} x \Rightarrow x = \tan t$, so $dx = \frac{1}{1 + x^2}$
+			\[
+			\int \frac{\tan^{-1} x}{1+x^2} dx = \int t dt = \frac{t^2}{2} + C = \frac{(\tan^{-1} x)^2}{2} + C
+			\Rightarrow \boxed{\text{(D)}} \text{(Corrected from original)}
+			\]
+			
+		\end{enumerate}
+		
+	\pagebreak
+	
+	
+		\section*{Case Study 4: Mastering Integration by Parts}
+		
+		The method of integration by parts is used when the integrand is a product of two functions for which no direct standard formula exists. The rule is derived from the product rule of differentiation and is given by:
+		\[
+		\int u \cdot v \, dx = u \int v \, dx - \int \left( \frac{du}{dx} \cdot \int v \, dx \right) dx
+		\]
+		To apply this, one must identify which part to take as $u$ and which as $v$. The LIATE rule (Logarithmic, Inverse trigonometric, Algebraic, Trigonometric, Exponential) is helpful to select $u$. For instance, to evaluate $\int x \ln x \, dx$, take $u = \ln x$ and $dv = x\, dx$. Below are problems that test understanding of this method.
+		
+		\subsection*{MCQ Questions}
+		
+		\begin{enumerate}
+			\item Evaluate: $\displaystyle \int x \cdot \ln x \, dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{x^2}{2} \ln x - \frac{x^2}{4} + C$
+				\item $x \ln x - x + C$
+				\item $\ln x + x + C$
+				\item $\frac{x^2 \ln x}{2} + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Use integration by parts: Let $u = \ln x$, $dv = x\, dx$
+			\[
+			\Rightarrow du = \frac{1}{x} dx, \quad v = \frac{x^2}{2}
+			\]
+			\[
+			\int x \ln x \, dx = \frac{x^2}{2} \ln x - \int \frac{x^2}{2} \cdot \frac{1}{x} dx = \frac{x^2}{2} \ln x - \int \frac{x}{2} dx = \frac{x^2}{2} \ln x - \frac{x^2}{4} + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Solve: $\displaystyle \int x e^x dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $x e^x + e^x + C$
+				\item $x e^x - e^x + C$
+				\item $x^2 e^x + C$
+				\item $e^x + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Let $u = x$, $dv = e^x dx$ $\Rightarrow du = dx$, $v = e^x$
+			\[
+			\int x e^x dx = x e^x - \int e^x dx = x e^x - e^x + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int x \cos x \, dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $x \sin x + \cos x + C$
+				\item $x \cos x + \sin x + C$
+				\item $x \sin x + \cos x + C$
+				\item $x \sin x + \cos x - x + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Let $u = x$, $dv = \cos x dx$ $\Rightarrow du = dx$, $v = \sin x$
+			\[
+			\int x \cos x dx = x \sin x - \int \sin x dx = x \sin x + \cos x + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int \ln x \, dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $x \ln x - x + C$
+				\item $\ln x + x + C$
+				\item $\frac{1}{x} + C$
+				\item $x \ln x + x + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Let $u = \ln x$, $dv = dx$ $\Rightarrow du = \frac{1}{x} dx$, $v = x$
+			\[
+			\int \ln x dx = x \ln x - \int x \cdot \frac{1}{x} dx = x \ln x - \int 1 dx = x \ln x - x + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Find: $\displaystyle \int x \tan^{-1} x \, dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{x^2}{2} \tan^{-1} x - \frac{1}{2} \int \frac{x^2}{1+x^2} dx + C$
+				\item $\frac{x^2}{2} \tan^{-1} x - \int \frac{x}{1+x^2} dx + C$
+				\item $x \tan^{-1} x + C$
+				\item $\tan^{-1} x + \frac{x^2}{2} + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Let $u = \tan^{-1} x$, $dv = x dx$ $\Rightarrow du = \frac{1}{1+x^2} dx$, $v = \frac{x^2}{2}$
+			\[
+			\int x \tan^{-1} x dx = \frac{x^2}{2} \tan^{-1} x - \int \frac{x^2}{2(1+x^2)} dx = \frac{x^2}{2} \tan^{-1} x - \frac{1}{2} \int \frac{x^2}{1+x^2} dx + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+		\end{enumerate}
+	
+	
+	
+	\pagebreak
+	
+	
+	
+		\section*{Case Study 5: Integration by Partial Fractions}
+		
+		The method of partial fractions is used to integrate rational functions of the form $\frac{P(x)}{Q(x)}$ where the degree of the numerator is less than the degree of the denominator. The integrand is split into simpler fractions, each of which can be integrated using standard formulas. The typical steps include:
+		\begin{itemize}
+			\item Factorizing the denominator
+			\item Expressing the function as a sum of simpler rational expressions
+			\item Finding constants by comparing coefficients or substituting values
+		\end{itemize}
+		Standard example:
+		\[
+		\int \frac{1}{x^2 - 1} dx = \int \left(\frac{1}{2(x-1)} - \frac{1}{2(x+1)}\right) dx = \frac{1}{2} \ln\left| \frac{x-1}{x+1} \right| + C
+		\]
+		This technique is widely used in algebraic integration problems.
+		
+		\subsection*{MCQ Questions}
+		
+		\begin{enumerate}
+			\item Evaluate: $\displaystyle \int \frac{3x+5}{x^2+x} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $3 \ln |x| + 2 \ln |x+1| + C$
+				\item $\ln |x| + 5 \ln |x+1| + C$
+				\item $2 \ln |x| + 3 \ln |x+1| + C$
+				\item $3 \ln |x+1| + 5 \ln |x| + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Factor denominator: $x(x+1)$\\
+			Express: $\frac{3x+5}{x(x+1)} = \frac{A}{x} + \frac{B}{x+1}$\\
+			Multiply both sides: $3x+5 = A(x+1) + Bx$\\
+			Substitute $x=0$: $5 = A(1) \Rightarrow A=5$\\
+			Substitute $x=-1$: $3(-1)+5 = B(-1) \Rightarrow -3+5 = -B \Rightarrow B = -2$\\
+			Now integrate:
+			\[
+			\int \left( \frac{5}{x} - \frac{2}{x+1} \right) dx = 5 \ln |x| - 2 \ln |x+1| + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Find: $\displaystyle \int \frac{1}{x^2 - 4} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\frac{1}{4} \ln \left| \frac{x-2}{x+2} \right| + C$
+				\item $\frac{1}{2} \ln \left| \frac{x-2}{x+2} \right| + C$
+				\item $\frac{1}{4} \ln |x^2 - 4| + C$
+				\item $\ln |x^2 - 4| + C$
+			\end{enumerate}
+			\textbf{Answer: (B)}\\
+			\textbf{Solution: } $x^2 - 4 = (x - 2)(x + 2)$\\
+			Use partial fractions: $\frac{1}{x^2 - 4} = \frac{A}{x-2} + \frac{B}{x+2}$\\
+			Solve: $1 = A(x+2) + B(x-2)$\\
+			Let $x = 2 \Rightarrow 1 = A(4) \Rightarrow A = \frac{1}{4}$\\
+			Let $x = -2 \Rightarrow 1 = B(-4) \Rightarrow B = -\frac{1}{4}$\\
+			Integrate:
+			\[
+			\int \left( \frac{1}{4(x-2)} - \frac{1}{4(x+2)} \right) dx = \frac{1}{4} \ln \left| \frac{x-2}{x+2} \right| + C \Rightarrow \boxed{\text{(B)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int \frac{x+2}{x^2+x} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\ln |x| + \ln |x+1| + C$
+				\item $2 \ln |x| - \ln |x+1| + C$
+				\item $\ln \left| \frac{x}{x+1} \right| + C$
+				\item $\ln |x| - \ln |x+1| + C$
+			\end{enumerate}
+			\textbf{Answer: (D)}\\
+			\textbf{Solution: } $x^2 + x = x(x+1)$\\
+			Let: $\frac{x+2}{x(x+1)} = \frac{A}{x} + \frac{B}{x+1}$\\
+			$x+2 = A(x+1) + Bx$\\
+			$x=0 \Rightarrow 2 = A \Rightarrow A = 2$\\
+			$x = -1 \Rightarrow 1 = -B \Rightarrow B = -1$\\
+			Integrate:
+			\[
+			\int \left( \frac{2}{x} - \frac{1}{x+1} \right) dx = 2 \ln |x| - \ln |x+1| + C \Rightarrow \boxed{\text{(D)}}
+			\]
+			
+			\item Integrate: $\displaystyle \int \frac{1}{x^2 + 3x + 2} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $\ln |x+1| + \ln |x+2| + C$
+				\item $\ln |x^2 + 3x + 2| + C$
+				\item $\ln \left| \frac{x+1}{x+2} \right| + C$
+				\item $\frac{1}{2} \ln |x^2 + 3x + 2| + C$
+			\end{enumerate}
+			\textbf{Answer: (A)}\\
+			\textbf{Solution: } Factor denominator: $(x+1)(x+2)$\\
+			Use: $\frac{1}{(x+1)(x+2)} = \frac{A}{x+1} + \frac{B}{x+2}$\\
+			$1 = A(x+2) + B(x+1)$\\
+			$x = -2 \Rightarrow 1 = A(0) + B(-1) \Rightarrow B = -1$\\
+			$x = -1 \Rightarrow 1 = A(1) + B(0) \Rightarrow A = 1$\\
+			Integrate:
+			\[
+			\int \left( \frac{1}{x+1} - \frac{1}{x+2} \right) dx = \ln |x+1| - \ln |x+2| + C = \ln \left| \frac{x+1}{x+2} \right| + C \Rightarrow \boxed{\text{(A)}}
+			\]
+			
+			\item Evaluate: $\displaystyle \int \frac{2x + 5}{x^2 + 5x + 6} dx$
+			\begin{enumerate}[label=(\Alph*)]
+				\item $2 \ln |x+2| + \ln |x+3| + C$
+				\item $\ln |x+3| - \ln |x+2| + C$
+				\item $2 \ln |x+3| + \ln |x+2| + C$
+				\item $\ln |x+2| + 2 \ln |x+3| + C$
+			\end{enumerate}
+			\textbf{Answer: (C)}\\
+			\textbf{Solution: } $x^2 + 5x + 6 = (x+2)(x+3)$\\
+			Express: $\frac{2x + 5}{(x+2)(x+3)} = \frac{A}{x+2} + \frac{B}{x+3}$\\
+			$2x + 5 = A(x+3) + B(x+2)$\\
+			Substitute $x = -3 \Rightarrow -1 = A(0) + B(-1) \Rightarrow B = 1$\\
+			Substitute $x = -2 \Rightarrow 1 = A(1) + B(0) \Rightarrow A = 1$\\
+			Integrate:
+			\[
+			\int \left( \frac{1}{x+2} + \frac{1}{x+3} \right) dx = \ln |x+2| + \ln |x+3| + C = \ln |(x+2)(x+3)| + C \Rightarrow \boxed{\text{(C)}}
+			\]
+			
+		\end{enumerate}
+	
+	
+\end{document}
