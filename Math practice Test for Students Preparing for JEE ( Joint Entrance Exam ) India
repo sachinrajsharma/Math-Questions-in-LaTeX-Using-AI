@@ -1,0 +1,280 @@
+\documentclass[12pt]{book}
+
+% Page and font settings
+\usepackage[a4paper, margin=0.75in]{geometry}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype} % improves text appearance
+
+% Math packages
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools} % enhances amsmath
+\usepackage{siunitx} % for scientific units
+\usepackage{mathrsfs} % for fancy math fonts
+\usepackage{cancel} % for canceling terms in math
+\usepackage{physics} % for derivatives, bra-ket, etc.
+
+% Figures and graphics
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+% Table and layout enhancements
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+
+
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\textbf{\Large Mock Test -01 (NSPOL)}}
+\lhead{\textbf{By: Sachin Sharma}}
+\rhead{\textbf{NSPOLIX001}}
+\cfoot{\textbf{Download E-Books from www.mathstudy.in}}
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=red,
+	linktoc=all,
+	pdftitle={Math Document},
+	pdfauthor={Sachin Sharma},
+}
+
+% Cross-referencing enhancements
+\usepackage[capitalise,noabbrev]{cleveref}
+
+% Watermark
+\usepackage{draftwatermark}
+\SetWatermarkText{Download Math E-Books from www.mathstudy.in}
+\SetWatermarkScale{0.3}
+
+% Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{6pt}\noindent\colorbox{gray!20}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{#1}}}}
+\newcommand{\ressubheading}[3]{%
+	\begin{tabular*}{\linewidth}{l @{\extracolsep{\fill}} r}
+		\textsc{\textbf{#1}} & \textsc{\textit{[#2]}} \\
+	\end{tabular*}\vspace{-6pt}
+}
+
+\everymath{\displaystyle} % displaystyle for inline math
+
+\begin{document}
+	
+	
+		
+		\begin{enumerate}
+			
+			\item The value of $i^{16} + i^{18} + i^{20} + i^{22}$ is:
+			\begin{enumerate}
+				\item $0$
+				\item $1$
+				\item $-1$
+				\item $i$
+			\end{enumerate}
+			\textbf{Answer:} (A) $0$ \\
+			\textbf{Solution:} Using $i^2 = -1$, we get:
+			\begin{align*}
+				i^{16} &= (i^4)^4 = 1^4 = 1 \\
+				i^{18} &= (i^4)^4 \cdot i^2 = 1 \cdot (-1) = -1 \\
+				i^{20} &= (i^4)^5 = 1^5 = 1 \\
+				i^{22} &= (i^4)^5 \cdot i^2 = 1 \cdot (-1) = -1 \\
+				\text{Sum} &= 1 - 1 + 1 - 1 = 0
+			\end{align*}
+			
+			\item The complex number $\frac{1 + 2i}{1 - i}$ lies in which quadrant of the complex plane?
+			\begin{enumerate}
+				\item First
+				\item Second
+				\item Third
+				\item Fourth
+			\end{enumerate}
+			\textbf{Answer:} (B) Second \\
+			\textbf{Solution:} Multiply numerator and denominator by $(1 + i)$:
+			\begin{align*}
+				\frac{1 + 2i}{1 - i} \cdot \frac{1 + i}{1 + i} &= \frac{(1 + 2i)(1 + i)}{1 - i^2} = \frac{1 + i + 2i + 2i^2}{2} \\
+				&= \frac{-1 + 3i}{2} = -\frac{1}{2} + \frac{3}{2}i
+			\end{align*}
+			This has negative real and positive imaginary part, so it's in the second quadrant.
+			
+			\item The modulus of the complex number $3 - 4i$ is:
+			\begin{enumerate}
+				\item $5$
+				\item $7$
+				\item $12$
+				\item $25$
+			\end{enumerate}
+			\textbf{Answer:} (A) $5$ \\
+			\textbf{Solution:} The modulus of $a + bi$ is $\sqrt{a^2 + b^2}$:
+			\[
+			|3 - 4i| = \sqrt{3^2 + (-4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+			\]
+			
+			\item The conjugate of the complex number $\frac{1}{2} + \frac{3}{4}i$ is:
+			\begin{enumerate}
+				\item $\frac{1}{2} - \frac{3}{4}i$
+				\item $-\frac{1}{2} + \frac{3}{4}i$
+				\item $\frac{3}{4} + \frac{1}{2}i$
+				\item $-\frac{3}{4} - \frac{1}{2}i$
+			\end{enumerate}
+			\textbf{Answer:} (A) $\frac{1}{2} - \frac{3}{4}i$ \\
+			\textbf{Solution:} The conjugate of $a + bi$ is $a - bi$, so:
+			\[
+			\text{Conjugate of } \left(\frac{1}{2} + \frac{3}{4}i\right) = \frac{1}{2} - \frac{3}{4}i
+			\]
+			
+			\item The polar form of $1 + i$ is:
+			\begin{enumerate}
+				\item $\sqrt{2}(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4})$
+				\item $2(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4})$
+				\item $\sqrt{2}(\cos \frac{\pi}{2} + i \sin \frac{\pi}{2})$
+				\item $2(\cos \frac{\pi}{2} + i \sin \frac{\pi}{2})$
+			\end{enumerate}
+			\textbf{Answer:} (A) $\sqrt{2}(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4})$ \\
+			\textbf{Solution:} For $1 + i$, modulus $r = \sqrt{1^2 + 1^2} = \sqrt{2}$ and argument $\theta = \tan^{-1}(1) = \frac{\pi}{4}$. Thus:
+			\[
+			1 + i = \sqrt{2}\left(\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}\right)
+			\]
+			
+			\item The cube roots of unity satisfy:
+			\begin{enumerate}
+				\item $1 + \omega + \omega^2 = 0$
+				\item $1 + \omega + \omega^2 = 1$
+				\item $\omega^3 = 0$
+				\item $\omega^2 = 1$
+			\end{enumerate}
+			\textbf{Answer:} (A) $1 + \omega + \omega^2 = 0$ \\
+			\textbf{Solution:} The cube roots of unity satisfy $x^3 - 1 = 0$ which factors as $(x - 1)(x^2 + x + 1) = 0$. For $\omega \neq 1$, we have $\omega^2 + \omega + 1 = 0$.
+			
+			\item The value of $(1 + i)^4$ is:
+			\begin{enumerate}
+				\item $-4$
+				\item $4i$
+				\item $-4i$
+				\item $4$
+			\end{enumerate}
+			\textbf{Answer:} (A) $-4$ \\
+			\textbf{Solution:} 
+			\begin{align*}
+				(1 + i)^2 &= 1 + 2i + i^2 = 2i \\
+				(1 + i)^4 &= (2i)^2 = 4i^2 = -4
+			\end{align*}
+			
+			\item The complex number $z$ satisfying $z + \overline{z} = 0$ is:
+			\begin{enumerate}
+				\item Purely real
+				\item Purely imaginary
+				\item Zero
+				\item Neither real nor imaginary
+			\end{enumerate}
+			\textbf{Answer:} (B) Purely imaginary \\
+			\textbf{Solution:} Let $z = a + bi$, then $\overline{z} = a - bi$. Given $z + \overline{z} = 2a = 0 \Rightarrow a = 0$. Thus $z$ is purely imaginary.
+			
+			\item The exponential form of $1 - i$ is:
+			\begin{enumerate}
+				\item $\sqrt{2}e^{i\pi/4}$
+				\item $\sqrt{2}e^{-i\pi/4}$
+				\item $2e^{i\pi/4}$
+				\item $2e^{-i\pi/4}$
+			\end{enumerate}
+			\textbf{Answer:} (B) $\sqrt{2}e^{-i\pi/4}$ \\
+			\textbf{Solution:} For $1 - i$, modulus $r = \sqrt{2}$ and argument $\theta = -\frac{\pi}{4}$. Thus:
+			\[
+			1 - i = \sqrt{2}e^{-i\pi/4}
+			\]
+			
+			\item The number of distinct fourth roots of unity is:
+			\begin{enumerate}
+				\item $1$
+				\item $2$
+				\item $3$
+				\item $4$
+			\end{enumerate}
+			\textbf{Answer:} (D) $4$ \\
+			\textbf{Solution:} The fourth roots of unity are solutions to $x^4 = 1$, which are $1, i, -1, -i$. Thus there are 4 distinct roots.
+			
+			\item If $z = \frac{1 + i}{1 - i}$, then $z^{100}$ equals:
+			\begin{enumerate}
+				\item $1$
+				\item $-1$
+				\item $i$
+				\item $-i$
+			\end{enumerate}
+			\textbf{Answer:} (A) $1$ \\
+			\textbf{Solution:} Simplify $z$:
+			\[
+			z = \frac{1 + i}{1 - i} \cdot \frac{1 + i}{1 + i} = \frac{1 + 2i + i^2}{1 - i^2} = \frac{2i}{2} = i
+			\]
+			Then $z^{100} = i^{100} = (i^4)^{25} = 1^{25} = 1$.
+			
+			\item The real part of $e^{i\pi/3}$ is:
+			\begin{enumerate}
+				\item $\frac{1}{2}$
+				\item $\frac{\sqrt{3}}{2}$
+				\item $1$
+				\item $0$
+			\end{enumerate}
+			\textbf{Answer:} (A) $\frac{1}{2}$ \\
+			\textbf{Solution:} Using Euler's formula:
+			\[
+			e^{i\pi/3} = \cos\left(\frac{\pi}{3}\right) + i \sin\left(\frac{\pi}{3}\right) = \frac{1}{2} + i \frac{\sqrt{3}}{2}
+			\]
+			Thus the real part is $\frac{1}{2}$.
+			
+			\item The principal argument of $-1 - i$ is:
+			\begin{enumerate}
+				\item $\frac{\pi}{4}$
+				\item $\frac{3\pi}{4}$
+				\item $-\frac{3\pi}{4}$
+				\item $\frac{5\pi}{4}$
+			\end{enumerate}
+			\textbf{Answer:} (C) $-\frac{3\pi}{4}$ \\
+			\textbf{Solution:} For $-1 - i$, the angle is in the third quadrant:
+			\[
+			\theta = \pi + \tan^{-1}\left(\frac{-1}{-1}\right) = \pi + \frac{\pi}{4} = \frac{5\pi}{4}
+			\]
+			But principal argument is in $(-\pi, \pi]$, so equivalent to $-\frac{3\pi}{4}$.
+			
+			\item The complex number $z$ satisfying $|z - 1| = |z + 1|$ lies on:
+			\begin{enumerate}
+				\item x-axis
+				\item y-axis
+				\item line $y = x$
+				\item line $y = -x$
+			\end{enumerate}
+			\textbf{Answer:} (B) y-axis \\
+			\textbf{Solution:} Let $z = x + iy$, then:
+			\[
+			\sqrt{(x-1)^2 + y^2} = \sqrt{(x+1)^2 + y^2}
+			\]
+			Squaring both sides: $(x-1)^2 = (x+1)^2 \Rightarrow -2x = 2x \Rightarrow x = 0$. Thus on y-axis.
+			
+			\item The value of $\log(1 + i)$ is:
+			\begin{enumerate}
+				\item $\frac{1}{2}\ln 2 + i\frac{\pi}{4}$
+				\item $\ln 2 + i\frac{\pi}{2}$
+				\item $\frac{1}{2}\ln 2 - i\frac{\pi}{4}$
+				\item $\ln 2 - i\frac{\pi}{2}$
+			\end{enumerate}
+			\textbf{Answer:} (A) $\frac{1}{2}\ln 2 + i\frac{\pi}{4}$ \\
+			\textbf{Solution:} For $z = 1 + i$, modulus $r = \sqrt{2}$ and argument $\theta = \frac{\pi}{4}$. Thus:
+			\[
+			\log z = \ln r + i\theta = \frac{1}{2}\ln 2 + i\frac{\pi}{4}
+			\]
+			
+		\end{enumerate}
+		
+	
+	
+	
+		
+	\end{document}
